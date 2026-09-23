@@ -1,4 +1,4 @@
-module github.com/pantopic/wazero-atomic/host
+module github.com/pantopic/ext-atomic/host-wazero
 
 go 1.25.7
 

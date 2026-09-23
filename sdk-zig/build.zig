@@ -2,6 +2,6 @@ const std = @import("std");
 
 pub fn build(b: *std.Build) void {
     _ = b.addModule("atomic", .{
-        .root_source_file = b.path("atomic.zig"),
+        .root_source_file = b.path("src/sdk.zig"),
     });
 }

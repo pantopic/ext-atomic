@@ -1,5 +1,5 @@
-module github.com/pantopic/wazero-atomic/test
+module github.com/pantopic/ext-atomic/test
 
 go 1.25.7
 
-require github.com/pantopic/wazero-atomic/sdk-go v0.0.2
+require github.com/pantopic/ext-atomic/sdk-go v0.0.2

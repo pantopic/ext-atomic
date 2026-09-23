@@ -1,17 +1,19 @@
 
-wasm:
-	@cd test && tinygo build -buildmode=wasi-legacy -target=wasi -opt=2 -gc=leaking -scheduler=none -o ../host/test.wasm module.go
+wasm-go:
+	@cd test && tinygo build -buildmode=wasi-legacy -target=wasi -opt=2 -gc=leaking -scheduler=none -o ../host-wazero/test.wasm module.go
 
 wasm-zig:
 	@cd test-zig && zig build --release
-	@cp test-zig/zig-out/bin/test-zig.wasm host/test-zig.wasm
+	@cp test-zig/zig-out/bin/test-zig.wasm host-wazero/test-zig.wasm
+
+wasm: wasm-go wasm-zig
 
 test:
-	@cd host && go test . -v
+	@cd host-wazero && go test . -v
 
 cover:
 	@mkdir -p _dist
-	@cd host && go test . -coverprofile=../_dist/coverage.out -v
+	@cd host-wazero && go test . -coverprofile=../_dist/coverage.out -v
 	@go tool cover -html=_dist/coverage.out -o _dist/coverage.html
 
 cloc:
