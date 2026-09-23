@@ -1,13 +1,13 @@
-# Wazero Atomic
+# Atomic
 
-A [wazero](https://pkg.go.dev/github.com/tetratelabs/wazero) host module, ABI and guest SDK providing atomic data 
+WebAssembly host module, ABI and guest SDK providing atomic data
 structures suitable for sharing data between concurrent WASI modules.
 
 ## Host Module
 
-[![Go Reference](https://godoc.org/github.com/pantopic/wazero-atomic/host?status.svg)](https://godoc.org/github.com/pantopic/wazero-atomic/host)
-[![Go Report Card](https://goreportcard.com/badge/github.com/pantopic/wazero-atomic/host)](https://goreportcard.com/report/github.com/pantopic/wazero-atomic/host)
-[![Go Coverage](https://github.com/pantopic/wazero-atomic/wiki/host/coverage.svg)](https://raw.githack.com/wiki/pantopic/wazero-atomic/host/coverage.html)
+[![Go Reference](https://godoc.org/github.com/pantopic/ext-atomic/host-wazero?status.svg)](https://godoc.org/github.com/pantopic/ext-atomic/host-wazero)
+[![Go Report Card](https://goreportcard.com/badge/github.com/pantopic/ext-atomic/host-wazero)](https://goreportcard.com/report/github.com/pantopic/ext-atomic/host)
+[![Go Coverage](https://github.com/pantopic/wazero-atomic/wiki/host/coverage.svg)](https://raw.githack.com/wiki/pantopic/ext-atomic/host/coverage.html)
 
 First register the host module with the runtime
 
@@ -16,7 +16,7 @@ import (
     "github.com/tetratelabs/wazero"
     "github.com/tetratelabs/wazero/imports/wasi_snapshot_preview1"
 
-    "github.com/pantopic/wazero-atomic/host"
+    "github.com/pantopic/ext-atomic/host-wazero"
 )
 
 func main() {
@@ -33,8 +33,8 @@ func main() {
 
 ## Guest SDK (Go)
 
-[![Go Reference](https://godoc.org/github.com/pantopic/wazero-atomic/sdk-go?status.svg)](https://godoc.org/github.com/pantopic/wazero-atomic/sdk-go)
-[![Go Report Card](https://goreportcard.com/badge/github.com/pantopic/wazero-atomic/sdk-go)](https://goreportcard.com/report/github.com/pantopic/wazero-atomic/sdk-go)
+[![Go Reference](https://godoc.org/github.com/pantopic/ext-atomic/sdk-go?status.svg)](https://godoc.org/github.com/pantopic/ext-atomic/sdk-go)
+[![Go Report Card](https://goreportcard.com/badge/github.com/pantopic/ext-atomic/sdk-go)](https://goreportcard.com/report/github.com/pantopic/ext-atomic/sdk-go)
 
 Then you can import the guest SDK into your WASI module to send messages from one WASI module to another.
 
@@ -42,7 +42,7 @@ Then you can import the guest SDK into your WASI module to send messages from on
 package main
 
 import (
-    "github.com/pantopic/wazero-atomic/sdk-go"
+    "github.com/pantopic/ext-atomic/sdk-go"
 )
 
 var n *atomic.Uint64
