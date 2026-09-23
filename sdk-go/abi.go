@@ -19,19 +19,19 @@ func __atomic() (res uint32) {
 	return uint32(uintptr(unsafe.Pointer(&meta[0])))
 }
 
-//go:wasm-module pantopic/wazero-atomic
+//go:wasm-module pantopic/ext-atomic
 //export __atomic_uint64_add
 func uint64_add()
 
-//go:wasm-module pantopic/wazero-atomic
+//go:wasm-module pantopic/ext-atomic
 //export __atomic_uint64_load
 func uint64_load()
 
-//go:wasm-module pantopic/wazero-atomic
+//go:wasm-module pantopic/ext-atomic
 //export __atomic_uint64_store
 func uint64_store()
 
-//go:wasm-module pantopic/wazero-atomic
+//go:wasm-module pantopic/ext-atomic
 //export __atomic_uint64_del
 func uint64_del()
 

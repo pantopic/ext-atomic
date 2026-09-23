@@ -11,7 +11,7 @@ import (
 )
 
 // Name is the name of this host module.
-const Name = "pantopic/wazero-atomic"
+const Name = "pantopic/ext-atomic"
 
 var (
 	ctxKeyMeta   = Name + `/meta`
